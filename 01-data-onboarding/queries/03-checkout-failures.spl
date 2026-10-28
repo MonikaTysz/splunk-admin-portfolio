@@ -1,0 +1,9 @@
+index=web sourcetype=access_combined
+| rex field=_raw "\"(?<http_method>[A-Z]+)\s+(?<request_path>\S+)\s+HTTP/[^\"]+\"\s+(?<http_status>\d{3})"
+| where request_path="/checkout" AND http_status>=500
+| stats count by request_path, http_method, http_status
+| sort -count
+
+I received a request to investigate checkout failures on an e-commerce website.
+I would start by searching Apache access logs for checkout requests returning HTTP 5xx errors. 
+I would then review the affected requests and error patterns to help identify the problem.
