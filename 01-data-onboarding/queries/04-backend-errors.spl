@@ -4,7 +4,3 @@ index=web sourcetype=apache_error
 | search apache_module="proxy" log_level="error"
 | stats count by error_code
 | sort -count
-
-I noticed HTTP 500 errors during checkout, so I would check the Apache error logs for more details. 
-I use SPL to identify proxy errors and count them by error code. 
-This helps me understand whether the issue might be related to communication with the backend server.
