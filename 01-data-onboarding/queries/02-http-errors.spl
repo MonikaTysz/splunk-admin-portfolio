@@ -3,8 +3,3 @@ index=web sourcetype=access_combined
 | where http_status>=400
 | stats count by http_status
 | sort -count
-
-I use this search to identify HTTP errors in Apache access logs.
-First, I extract the HTTP status code. 
-Then I filter for errors and count how many times each status occurs.
-This helps me identify problems affecting the e-commerce website.
