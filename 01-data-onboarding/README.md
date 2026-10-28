@@ -80,8 +80,6 @@ My configuration would include:
 
 I would use Deployment Server to distribute the forwarder configuration and the appropriate deployment mechanism for the Indexer-side parsing configuration.
 
-I also plan to include a separate example of sensitive-data masking using **transforms.conf**, based on synthetic application logs.
-
 ## Step 4: Testing in DEV
 
 I always want to validate my configuration before moving anything to production.
@@ -156,10 +154,4 @@ Through this project, I want to demonstrate my understanding of:
 - SPL validation.
 - Troubleshooting and production deployment planning.
 
-## Current Project Status
 
-I have started documenting the scenario and creating sample Splunk configuration files.
-
-The project is still in progress. I will add sample Apache logs, update the configurations, and document test results as I complete the hands-on work.
-
-All data and configurations in this repository are examples. No confidential production information is included.
