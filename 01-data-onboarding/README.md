@@ -141,6 +141,18 @@ After receiving approval, I would prepare the production deployment, follow the 
 
 I would also document the final configuration and any troubleshooting steps for future support.
 
+## Project Files
+
+I organized my project files to show how I approach Apache log onboarding and troubleshooting.
+
+- `inputs.conf` — Apache access and error log collection.
+- `outputs.conf` — Universal Forwarder communication with the Indexer.
+- `props.conf` — Timestamp extraction and event parsing.
+- `sample_access.log` — Synthetic Apache access log examples.
+- `sample_error.log` — Synthetic Apache error log examples.
+- `queries/` — SPL searches for ingestion validation, HTTP errors, checkout failures, and backend errors.
+- `TROUBLESHOOTING.md` — My approach to investigating checkout failures.
+- 
 ## What I Want to Demonstrate
 
 Through this project, I want to demonstrate my understanding of:
