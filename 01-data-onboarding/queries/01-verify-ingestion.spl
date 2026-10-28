@@ -1,0 +1,6 @@
+index=web sourcetype=access_combined
+| stats count by host, sourcetype
+
+I start by checking whether the Apache logs are arriving in the correct index.
+I use a simple SPL search to count events by host and sourcetype. 
+This helps me confirm that data ingestion is working.
