@@ -8,7 +8,9 @@ I chose this scenario because web server monitoring is a practical example of ho
 
 My goal is to document the entire onboarding process, from gathering requirements and preparing configurations to validating data and troubleshooting.
 
-**Project status:** Hands-on portfolio scenario in progress, using sample configurations and synthetic data.
+
+**Project status:** Portfolio case study with completed hands-on Splunk ingestion and SPL validation using synthetic Apache logs. Universal Forwarder deployment and end-to-end forwarding are documented as proposed implementation steps and have not been tested in this project.
+
 
 ## Business Request
 
@@ -78,13 +80,14 @@ My configuration would include:
 - **outputs.conf:** I configure where the Universal Forwarder sends the data.
 - **props.conf:** I configure timestamp recognition and event parsing based on the log samples.
 
-I would use Deployment Server to distribute the forwarder configuration and the appropriate deployment mechanism for the Indexer-side parsing configuration.
+I would use Deployment Server to distribute the forwarder configuration and the appropriate deployment mechanism for the Indexer-side parsing configuration. 
+The configuration files included in this repository are examples of how I would prepare Apache log onboarding in a distributed Splunk environment. They have not been deployed or tested through a Universal Forwarder or Deployment Server as part of this project.
 
-## Step 4: Testing in DEV
+## Step 4: DEV Testing and SPL Validation
 
-I always want to validate my configuration before moving anything to production.
+Before deploying a new data source to production, I would validate the complete onboarding process in DEV, including Universal Forwarder connectivity and data collection.
 
-For this scenario, I would first test the onboarding process in DEV.
+For this portfolio project, I completed hands-on testing by manually uploading synthetic Apache logs into Splunk Enterprise and validating the indexed events using SPL.
 
 I would check whether:
 
@@ -107,19 +110,25 @@ index=web
 **Check HTTP errors:**
 
 ```spl
-index=web sourcetype=access_combined status>=400
-| stats count by status
+index=web sourcetype=access_combined
+| rex field=_raw "\"\s+(?<http_status>\d{3})\s+"
+| where http_status>=400
+| stats count by http_status
 | sort -count
+
 ```
 
-**Review traffic trends:**
+**Example SPL — Review traffic trends (not yet validated):**
 
 ```spl
 index=web sourcetype=access_combined
 | timechart span=1h count
 ```
 
-These searches are examples I plan to validate in a Splunk lab.
+I completed hands-on ingestion and SPL validation using synthetic Apache logs in a Splunk Enterprise test environment. I verified event counts, HTTP errors, checkout failures, and Apache backend proxy errors.
+
+The validated SPL searches and test results are available in the `queries/` and `test-results/` folders. Universal Forwarder and Deployment Server testing remain planned implementation steps.
+
 
 ## Step 5: Troubleshooting
 
@@ -152,7 +161,8 @@ I organized my project files to show how I approach Apache log onboarding and tr
 - `sample_error.log` — Synthetic Apache error log examples.
 - `queries/` — SPL searches for ingestion validation, HTTP errors, checkout failures, and backend errors.
 - `TROUBLESHOOTING.md` — My approach to investigating checkout failures.
-- 
+- `test-results/` — Completed SPL validation results, investigation findings, and supporting screenshots.
+
 ## What I Want to Demonstrate
 
 Through this project, I want to demonstrate my understanding of:
