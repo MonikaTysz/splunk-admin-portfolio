@@ -37,4 +37,15 @@ These findings suggest a possible backend communication issue. Further correlati
 
 This validation was performed using synthetic Apache log samples manually uploaded into Splunk Enterprise.
 
-The tests confirmed successful indexing and execution of the documented SPL searches. Universal Forwarder collection, Deployment Server distribution, and end-to
+The tests confirmed successful indexing and execution of the documented SPL searches. Universal Forwarder collection, Deployment Server distribution, and end-to-end forwarding remain outside the scope of the completed tests.
+
+
+
+## Validation Evidence
+
+### Apache Backend Error Analysis
+
+The screenshot below shows the SPL search results from my Splunk Enterprise test environment. I identified three Apache proxy error codes: AH00957, AH01102, and AH01114.
+
+![Apache Backend Error SPL Results](04-backend-errors-result.png)
+
