@@ -36,19 +36,24 @@ I am currently refreshing and expanding my technical skills through independent 
 - Syslog and Linux
 - Data Ingestion Troubleshooting
 
+
 ## Portfolio Projects
 
-This repository will contain hands-on Splunk administration and troubleshooting examples, including:
+### Project 1: E-commerce Apache Web Server Log Onboarding
 
-- Splunk configuration files
-- SPL searches and reports
-- Data onboarding and forwarding
-- Troubleshooting scenarios
-- Splunk administration exercises
+I created an Apache log onboarding case study to demonstrate how I approach Splunk administration, data ingestion, SPL validation, and troubleshooting.
 
-Projects will be added as they are completed and documented.
+I prepared sample Splunk configuration files, ingested synthetic Apache logs into Splunk Enterprise, and successfully validated four SPL searches.
 
-All examples will use synthetic data and sanitized configurations.
+The project includes configuration examples, sample logs, troubleshooting documentation, test results, and supporting screenshots.
+
+**[View Project 1 — Apache Log Onboarding](01-data-onboarding/README.md)**
+
+### Upcoming Projects
+
+I plan to add more hands-on Splunk administration projects covering monitoring, troubleshooting, dashboards, and configuration management.
+
+All portfolio examples use synthetic data and sanitized configurations.
 
 ## Contact
 
