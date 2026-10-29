@@ -167,3 +167,15 @@ Through this project, I want to demonstrate my understanding of:
 - Troubleshooting and production deployment planning.
 
 
+## Lab Validation and Test Evidence
+
+I validated Apache access and error log ingestion in a Splunk Enterprise test environment.
+
+I executed four SPL searches to verify event ingestion, identify HTTP errors, investigate checkout failures, and analyze Apache backend proxy errors.
+
+All four searches returned the expected results.
+
+The validation results, investigation findings, and Splunk screenshots are documented here:
+
+[View SPL Validation Results and Evidence](test-results/README.md)
+
